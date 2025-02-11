@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Secure Text Encryptor</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Secure Text Encryptor</h1>
+            <p>
+                End-to-End Encryption Tool (Works Offline)
+            </p>
+        </div>
+
+        <div class="input-group">
+            <label for="inputText">Text to Encrypt/Decrypt</label>
+            <textarea id="inputText" rows="5" placeholder="Enter your sensitive text here..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Encryption Password</label>
+            <input type="password" id="password" placeholder="Minimum 8 characters, mix of types"
+            oninput="checkPasswordStrength(this.value)">
+            <div id="password-strength" class="password-strength"></div>
+            <span id="eye" class="toggle-password" onclick="togglePassword()">
+                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </span>
+
+        </div>
+
+        <div class="button-group">
+            <button class="encrypt" onclick="encryptText()">Encrypt</button>
+            <button class="decrypt" onclick="decryptText()">Decrypt</button>
+            <button class="reset" onclick="resetFields()">Reset</button>
+
+        </div>
+
+        <div class="input-group">
+            <div class="copy-wrapper">
+                <label for="outputText">Result</label>
+                <button class="copy-button" onclick="copyResult()">
+                    <svg class="clipboard" viewBox="0 0 24 24">
+                        <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" />
+                    </svg>
+                    <svg class="checkmark" viewBox="0 0 24 24">
+                        <path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" />
+                    </svg>
+                </button>
+                <textarea id="outputText" rows="4" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="status-message" id="status"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

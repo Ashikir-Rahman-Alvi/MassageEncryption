@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background: #f8f9fa;
+    --text-color: #333;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 60px;
+    top: 420px;
+    cursor: pointer;
+}
+
+.toggle-password svg {
+    width: 24px;
+    height: 24px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.status-message {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.success {
+    background-color: #e8f6ef;
+    color: var(--success-color);
+    border: 1px solid #a9dfbf;
+}
+
+.error {
+    background-color: #fdedec;
+    color: var(--error-color);
+    border: 1px solid #f5b7b1;
+}
+
+.copy-wrapper {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.copy-button {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-button:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.copy-button:active {
+    transform: scale(0.95) translateY(-50%);
+}
+
+.copy-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #666;
+    transition: fill 0.2s ease;
+}
+
+.copy-button:hover svg {
+    fill: var(--secondary-color);
+}
+
+.checkmark {
+    display: none;
+}
+
+.copied .clipboard {
+    display: none;
+}
+
+.copied .checkmark {
+    display: block;
+    fill: var(--success-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .button-group {
+        flex-direction: rows;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+/* Buttons */
+button {
+    width: 30%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    margin-top: 10px;
+}
+
+button.encrypt {
+    background-color: #007bff;
+    color: white;
+}
+
+button.decrypt {
+    background-color: #28a745;
+    color: white;
+}
+
+button.reset {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 0.7;
+}
+/* ... (keep existing styles) ... */
+.password-strength {
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.strength-0 {
+    background: #e74c3c;
+    width: 25%
+}
+.strength-1 {
+    background: #e67e22;
+    width: 50%
+}
+.strength-2 {
+    background: #f1c40f;
+    width: 75%
+}
+.strength-3 {
+    background: #2ecc71;
+    width: 100%
+}
