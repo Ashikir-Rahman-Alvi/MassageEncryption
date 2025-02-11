@@ -73,17 +73,27 @@
             transition: border-color 0.3s ease;
         }
 
-        .toggle-password {
-            position: absolute;
-            right: 60px;
-            top: 425px;
-            cursor: pointer;
-        }
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative; /* Add this line */
+}
 
-        .toggle-password svg {
-            width: 24px;
-            height: 24px;
-        }
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.toggle-password svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
 
         textarea:focus, input:focus {
             outline: none;
